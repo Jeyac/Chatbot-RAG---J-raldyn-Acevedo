@@ -1,0 +1,63 @@
+/* Bootstrap Custom Styles - Solo mejoras sutiles */
+
+/* Variables personalizadas para mantener el tema rosado */
+:root {
+  --bs-primary: #ec4899;
+  --bs-primary-rgb: 236, 72, 153;
+  --bs-secondary: #f3e8ff;
+  --bs-secondary-rgb: 243, 232, 255;
+  --bs-success: #10b981;
+  --bs-info: #06b6d4;
+  --bs-warning: #f59e0b;
+  --bs-danger: #ef4444;
+  --bs-light: #fdf2f8;
+  --bs-dark: #831843;
+}
+
+/* Solo mejoras sutiles - no interferir con el diseño existente */
+
+/* Mejoras sutiles para iconos y utilidades */
+.text-primary {
+  color: #ec4899 !important;
+}
+
+.bg-primary {
+  background-color: #ec4899 !important;
+}
+
+/* Mantener compatibilidad con Tailwind */
+.bg-pink-50 {
+  background-color: #fdf2f8 !important;
+}
+
+.bg-pink-100 {
+  background-color: #fce7f3 !important;
+}
+
+.text-pink-600 {
+  color: #db2777 !important;
+}
+
+.text-pink-800 {
+  color: #831843 !important;
+}
+
+.border-pink-200 {
+  border-color: #fce7f3 !important;
+}
+
+/* Mejoras sutiles para formularios */
+.form-control:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 0.2rem rgba(236, 72, 153, 0.25);
+}
+
+/* Mejoras sutiles para botones */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #ec4899;
+  --bs-btn-border-color: #ec4899;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #db2777;
+  --bs-btn-hover-border-color: #db2777;
+}
