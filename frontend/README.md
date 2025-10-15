@@ -2,16 +2,16 @@
 
 Frontend desarrollado con Nuxt 3 para el sistema de Chatbot RAG.
 
-## 🚀 Características
+## Características
 
-- ✅ **Interfaz moderna**: Diseño limpio con Tailwind CSS
-- ✅ **Subida de PDFs**: Drag & drop y selección de archivos
-- ✅ **Chat en tiempo real**: Comunicación via WebSockets
-- ✅ **Gestión de documentos**: Lista, procesamiento y eliminación
-- ✅ **Responsive**: Adaptable a diferentes tamaños de pantalla
-- ✅ **Componentes reutilizables**: Arquitectura modular
+- **Interfaz moderna**: Diseño limpio con Tailwind CSS
+- **Subida de PDFs**: Drag & drop y selección de archivos
+- **Chat en tiempo real**: Comunicación via WebSockets
+- **Gestión de documentos**: Lista, procesamiento y eliminación
+- **Responsive**: Adaptable a diferentes tamaños de pantalla
+- **Componentes reutilizables**: Arquitectura modular
 
-## 🛠️ Instalación
+## Instalación
 
 ### 1. Instalar dependencias
 ```bash
@@ -20,7 +20,7 @@ npm install
 
 ### 2. Configurar variables de entorno
 ```bash
-cp env.example .env
+ .env
 ```
 
 Editar `.env` con las URLs del backend:
@@ -36,7 +36,7 @@ npm run dev
 
 La aplicación estará disponible en: http://localhost:3000
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 frontend/
@@ -56,7 +56,7 @@ frontend/
 └── package.json            # Dependencias
 ```
 
-## 🎯 Componentes
+## Componentes
 
 ### DocumentUpload
 - Subida de archivos PDF con drag & drop
@@ -74,7 +74,7 @@ frontend/
 - Historial de mensajes
 - Estado de conexión
 
-## 🔌 Conexión con Backend
+## Conexión con Backend
 
 ### API REST
 - `POST /api/documentos/` - Subir documento
@@ -87,7 +87,7 @@ frontend/
 - `respuesta_generada` - Recibir respuesta
 - `error` - Manejo de errores
 
-## 🎨 Estilos
+## Estilos
 
 Utiliza Tailwind CSS con clases personalizadas:
 - `.btn-primary` - Botón principal
@@ -95,7 +95,7 @@ Utiliza Tailwind CSS con clases personalizadas:
 - `.input-field` - Campo de entrada
 - `.card` - Tarjeta contenedora
 
-## 🚀 Scripts Disponibles
+## Scripts Disponibles
 
 ```bash
 npm run dev      # Desarrollo
@@ -103,13 +103,13 @@ npm run build    # Construcción
 npm run preview  # Vista previa
 ```
 
-## 📱 Responsive Design
+## Responsive Design
 
 - **Mobile**: Layout de una columna
 - **Tablet**: Layout adaptativo
 - **Desktop**: Layout de dos columnas (gestión + chat)
 
-## 🔧 Configuración
+## Configuración
 
 ### Variables de Entorno
 - `NUXT_PUBLIC_API_BASE`: URL base de la API

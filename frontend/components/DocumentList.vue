@@ -195,12 +195,22 @@ const formatFileSize = (bytes) => {
 }
 
 const formatDate = (dateString) => {
-  return new Date(dateString).toLocaleDateString('es-ES', {
+  if (!dateString) return 'Fecha no disponible'
+  
+  const date = new Date(dateString)
+  
+  // Verificar si la fecha es válida
+  if (isNaN(date.getTime())) {
+    return 'Fecha inválida'
+  }
+  
+  return date.toLocaleDateString('es-ES', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
     hour: '2-digit',
-    minute: '2-digit'
+    minute: '2-digit',
+    timeZone: 'America/Mexico_City'
   })
 }
 

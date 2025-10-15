@@ -223,9 +223,19 @@ const scrollToBottom = () => {
 }
 
 const formatTime = (timestamp) => {
-  return new Date(timestamp).toLocaleTimeString('es-ES', {
+  if (!timestamp) return 'Hora no disponible'
+  
+  const date = new Date(timestamp)
+  
+  // Verificar si la fecha es válida
+  if (isNaN(date.getTime())) {
+    return 'Hora inválida'
+  }
+  
+  return date.toLocaleTimeString('es-ES', {
     hour: '2-digit',
-    minute: '2-digit'
+    minute: '2-digit',
+    timeZone: 'America/Mexico_City'
   })
 }
 
