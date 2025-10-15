@@ -3,6 +3,7 @@ Modelo SQLAlchemy para mensajes
 """
 from datetime import datetime
 from funcionalidades.core.infraestructura.database import db
+from funcionalidades.core.infraestructura.datetime_utils import get_local_now_naive
 
 
 class MensajeModel(db.Model):
@@ -13,7 +14,7 @@ class MensajeModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     contenido = db.Column(db.Text, nullable=False)
     es_usuario = db.Column(db.Boolean, nullable=False)
-    fecha_creacion = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    fecha_creacion = db.Column(db.DateTime, default=get_local_now_naive, nullable=False)
     documento_id = db.Column(db.Integer, db.ForeignKey('documentos.id'), nullable=True)
     
     def __repr__(self):

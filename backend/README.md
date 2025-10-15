@@ -2,15 +2,15 @@
 
 Sistema de chatbot que utiliza RAG (Retrieval-Augmented Generation) para responder preguntas basándose en documentos PDF cargados.
 
-## ✅ Requisitos Cumplidos
+## Requisitos Cumplidos
 
-- ✅ **Selección del documento**: Sistema permite subir PDFs
-- ✅ **Procesamiento del documento**: Genera embeddings usando sentence-transformers
-- ✅ **Comunicación con OpenAI API**: Integración completa para respuestas contextualizadas
-- ✅ **Condición de respuesta**: "No poseo información sobre ese tema en el documento cargado."
-- ✅ **WebSockets**: Comunicación en tiempo real implementada
+- **Selección del documento**: Sistema permite subir PDFs
+- **Procesamiento del documento**: Genera embeddings usando sentence-transformers
+- **Comunicación con OpenAI API**: Integración completa para respuestas contextualizadas
+- **Condición de respuesta**: "No poseo información sobre ese tema en el documento cargado."
+- **WebSockets**: Comunicación en tiempo real implementada
 
-## 🚀 Instalación y Uso
+## Instalación y Uso
 
 ### 1. Instalar dependencias
 ```powershell
@@ -33,7 +33,7 @@ python app.py
 2. **Procesar**: `POST /api/documentos/{id}/procesar` (genera embeddings)
 3. **Chat**: WebSocket en `ws://localhost:5000/socket.io/`
 
-## 📋 Endpoints
+## Endpoints
 
 - `POST /api/documentos/` - Subir documento PDF
 - `GET /api/documentos/` - Listar documentos
@@ -45,14 +45,14 @@ python app.py
 - `POST /api/chat/limpiar` - Limpiar historial
 - `GET /health` - Estado del sistema
 
-## 🔧 Tecnologías
+## Tecnologías
 
 - **Backend**: Flask, SQLAlchemy, WebSockets
 - **IA**: OpenAI API, sentence-transformers, scikit-learn
 - **Base de datos**: PostgreSQL/SQLite
 - **Arquitectura**: Clean Architecture, DDD
 
-## 📁 Estructura
+## Estructura
 
 ```
 backend/
@@ -68,15 +68,13 @@ backend/
 └── migrations/                     # Migraciones de BD
 ```
 
-## 🎯 Flujo de Trabajo
+## Flujo de Trabajo
 
 1. **Subir PDF** → Extrae texto automáticamente
 2. **Procesar** → Genera embeddings con sentence-transformers
 3. **Chat** → Busca documentos similares y responde con OpenAI
 4. **Respuesta** → Contextualizada o "No poseo información..."
 
-## 👨‍💻 Autor
+## Autor
 
 **Jéraldyn Acevedo**
-
-Sistema implementado siguiendo Clean Architecture y Domain-Driven Design.

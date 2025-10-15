@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional, List
 from funcionalidades.core.exceptions.domain_exceptions import ValidationError
+from funcionalidades.core.infraestructura.datetime_utils import get_local_now_naive
 
 
 @dataclass
@@ -45,7 +46,7 @@ class DocumentoEntity:
             raise ValidationError("El contenido del documento es demasiado grande")
         
         self.contenido = nuevo_contenido.strip()
-        self.fecha_actualizacion = datetime.utcnow()
+        self.fecha_actualizacion = get_local_now_naive()
     
     def actualizar_embeddings(self, embeddings: List[float]):
         """Actualizar los embeddings del documento"""
@@ -53,7 +54,7 @@ class DocumentoEntity:
             raise ValidationError("Los embeddings no pueden estar vacíos")
         
         self.embeddings = embeddings
-        self.fecha_actualizacion = datetime.utcnow()
+        self.fecha_actualizacion = get_local_now_naive()
     
     def tiene_embeddings(self) -> bool:
         """Verificar si el documento tiene embeddings"""
