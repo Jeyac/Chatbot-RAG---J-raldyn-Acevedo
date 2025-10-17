@@ -1,27 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ----------------------------- */
+/* Importación de TailwindCSS */
+/* ----------------------------- */
+@tailwind base;        /* Estilos base de Tailwind */
+@tailwind components;  /* Componentes predefinidos de Tailwind */
+@tailwind utilities;   /* Clases utilitarias de Tailwind */
 
+/* ----------------------------- */
+/* Base layer - estilos globales */
+/* ----------------------------- */
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif; /* Fuente principal del proyecto */
   }
 }
 
+/* ----------------------------- */
+/* Components layer - estilos personalizados */
+/* ----------------------------- */
 @layer components {
+
+  /* Botón principal */
   .btn-primary {
-    @apply bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply bg-pink-500          /* Fondo rosado intenso */
+           hover:bg-pink-600    /* Fondo al pasar el mouse */
+           text-white           /* Texto blanco */
+           font-medium          /* Peso de fuente medio */
+           py-2 px-4            /* Padding vertical y horizontal */
+           rounded-lg           /* Bordes redondeados */
+           transition-colors     /* Transición suave de colores */
+           duration-200;        /* Duración de la transición */
   }
   
+  /* Botón secundario */
   .btn-secondary {
-    @apply bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply bg-blue-100          /* Fondo rosado claro */
+           hover:bg-pink-200    /* Fondo al pasar el mouse */
+           text-pink-800        /* Texto rosado oscuro */
+           font-medium          /* Peso de fuente medio */
+           py-2 px-4            /* Padding */
+           rounded-lg           /* Bordes redondeados */
+           transition-colors
+           duration-200;
   }
   
+  /* Campos de entrada (inputs) */
   .input-field {
-    @apply w-full px-3 py-2 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent;
+    @apply w-full               /* Ancho completo */
+           px-3 py-2            /* Padding */
+           border border-blue-300 /* Borde rosado claro */
+           rounded-lg           /* Bordes redondeados */
+           focus:outline-none   /* Quitar outline por defecto al enfocar */
+           focus:ring-2         /* Anillo de enfoque de 2px */
+           focus:ring-pink-500  /* Color del anillo al enfocar */
+           focus:border-transparent; /* Borde transparente al enfocar */
   }
   
+  /* Tarjetas (cards) */
   .card {
-    @apply bg-white rounded-lg shadow-md border border-pink-200;
+    @apply bg-white             /* Fondo blanco */
+           rounded-lg           /* Bordes redondeados */
+           shadow-md            /* Sombra media */
+           border border-pink-200; /* Borde rosado claro */
   }
 }
+

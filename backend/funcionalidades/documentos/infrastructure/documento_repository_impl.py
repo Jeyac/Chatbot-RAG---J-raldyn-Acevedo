@@ -172,15 +172,15 @@ class DocumentoRepositoryImpl(DocumentoRepository):
             ).first()
             
             if not modelo:
-                print(f"❌ Documento ID {documento_id} no encontrado o sin embeddings")
+                print(f"Documento ID {documento_id} no encontrado o sin embeddings")
                 return []
             
             # Verificar que tiene embeddings válidos
             if not modelo.embeddings or len(modelo.embeddings) == 0:
-                print(f"❌ Documento ID {documento_id} no tiene embeddings válidos")
+                print(f"Documento ID {documento_id} no tiene embeddings válidos")
                 return []
             
-            print(f"✅ Documento ID {documento_id} encontrado: {modelo.nombre}")
+            print(f"Documento ID {documento_id} encontrado: {modelo.nombre}")
             
             # Crear lista con solo este documento
             modelos_con_embeddings = [modelo]
@@ -190,7 +190,7 @@ class DocumentoRepositoryImpl(DocumentoRepository):
             
             # Verificar que tenemos embeddings válidos
             if not self.documentos_embeddings:
-                print(f"❌ No se pudieron reconstruir embeddings para documento ID {documento_id}")
+                print(f"No se pudieron reconstruir embeddings para documento ID {documento_id}")
                 return []
             
             # Buscar documentos similares usando el servicio de embeddings
@@ -202,7 +202,7 @@ class DocumentoRepositoryImpl(DocumentoRepository):
                 umbral=0.1  # Umbral más bajo para capturar más contenido
             )
             
-            print(f"🔍 Encontrados {len(indices_similares)} fragmentos similares en documento ID {documento_id}")
+            print(f"Encontrados {len(indices_similares)} fragmentos similares en documento ID {documento_id}")
             
             # Obtener documentos correspondientes (solo el documento seleccionado)
             documentos_similares = []

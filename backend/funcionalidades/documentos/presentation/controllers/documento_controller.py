@@ -45,14 +45,14 @@ def crear_documento():
         if file_extension != '.pdf':
             return jsonify({'error': 'Solo se permiten archivos PDF'}), 400
         
-        # Validar tamaño del archivo (1GB máximo)
+        # Validar tamaño del archivo (10MB máximo)
         archivo.seek(0, 2)  # Ir al final del archivo
         file_size = archivo.tell()  # Obtener tamaño
         archivo.seek(0)  # Volver al inicio
         
-        max_size = 1024 * 1024 * 1024  # 1GB en bytes
+        max_size = 10 * 1024 * 1024  # 10MB en bytes
         if file_size > max_size:
-            return jsonify({'error': f'El archivo no puede ser mayor a 1GB. Tamaño actual: {file_size / (1024*1024*1024):.2f}GB'}), 400
+            return jsonify({'error': f'El archivo no puede ser mayor a 10MB. Tamaño actual: {file_size / (1024*1024):.2f}MB'}), 400
         
         # Leer contenido del archivo PDF
         contenido = _extraer_texto_pdf(archivo)

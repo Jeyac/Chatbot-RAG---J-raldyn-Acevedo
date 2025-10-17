@@ -1,6 +1,5 @@
 """
 Servicio de embeddings alternativo usando sentence-transformers
-Reemplaza LangChain para evitar problemas de compatibilidad
 """
 import numpy as np
 from typing import List, Optional

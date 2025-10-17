@@ -150,7 +150,7 @@ class ProcesarMensajeUseCase:
             
             if es_pregunta_general and documento_id:
                 # Para preguntas generales, usar todo el contenido del documento
-                print(f"📋 Pregunta general detectada, usando todo el contenido del documento ID: {documento_id}")
+                print(f"Pregunta general detectada, usando todo el contenido del documento ID: {documento_id}")
                 documento_completo = self.documento_repository.get_by_id(documento_id)
                 if documento_completo and documento_completo.contenido:
                     contexto = documento_completo.contenido
@@ -165,17 +165,17 @@ class ProcesarMensajeUseCase:
             # Buscar documentos similares
             if documento_id:
                 # Si se especifica un documento, buscar solo en ese documento
-                print(f"🎯 Buscando solo en documento ID: {documento_id}")
+                print(f"Buscando solo en documento ID: {documento_id}")
                 documentos_similares = self.documento_repository.buscar_por_similitud_en_documento(query_embedding, documento_id, limite=3)
             else:
                 # Si no se especifica documento, buscar en todos
-                print("🌐 Buscando en todos los documentos")
+                print("Buscando en todos los documentos")
                 documentos_similares = self.documento_repository.buscar_por_similitud(query_embedding, limite=3)
             
             if not documentos_similares:
                 # Si no se encuentran fragmentos similares, usar todo el contenido del documento
                 if documento_id:
-                    print(f"⚠️ No se encontraron fragmentos similares, usando todo el contenido del documento ID: {documento_id}")
+                    print(f"No se encontraron fragmentos similares, usando todo el contenido del documento ID: {documento_id}")
                     documento_completo = self.documento_repository.get_by_id(documento_id)
                     if documento_completo and documento_completo.contenido:
                         contexto = documento_completo.contenido

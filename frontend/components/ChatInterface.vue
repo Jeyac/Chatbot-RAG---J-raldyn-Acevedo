@@ -235,7 +235,7 @@ const formatTime = (timestamp) => {
   return date.toLocaleTimeString('es-ES', {
     hour: '2-digit',
     minute: '2-digit',
-    timeZone: 'America/Mexico_City'
+    timeZone: 'America/Guatemala'
   })
 }
 

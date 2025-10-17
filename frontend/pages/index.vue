@@ -1,8 +1,11 @@
 <template>
   <div class="min-h-screen bg-pink-50 flex items-center justify-center">
     <div class="max-w-md w-full space-y-8">
+
+      <!-- Sección de bienvenida con logo e información -->
       <div class="text-center">
         <div class="mx-auto h-16 w-16 bg-pink-500 rounded-full flex items-center justify-center mb-4">
+          <!-- Icono principal del asistente -->
           <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" />
           </svg>
@@ -12,8 +15,11 @@
           Sistema de preguntas y respuestas con Seven, tu asistente virtual de confianza
         </p>
       </div>
-      
+
+      <!-- Contenedor principal con información y llamada a la acción -->
       <div class="bg-white py-8 px-6 shadow rounded-lg border border-pink-200">
+
+        <!-- Introducción al sistema -->
         <div class="space-y-4">
           <div class="text-center">
             <h3 class="text-lg font-medium text-pink-800 mb-2">
@@ -23,7 +29,8 @@
               Sube un documento PDF y haz preguntas sobre su contenido.
             </p>
           </div>
-          
+
+          <!-- Beneficios y funcionalidades -->
           <div class="space-y-3">
             <div class="flex items-center space-x-3 text-sm text-pink-600">
               <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
@@ -44,7 +51,8 @@
               <span>Haz preguntas en tiempo real</span>
             </div>
           </div>
-          
+
+          <!-- Botón de inicio -->
           <div class="pt-4">
             <NuxtLink 
               to="/chatbot" 
@@ -55,7 +63,8 @@
           </div>
         </div>
       </div>
-      
+
+      <!-- Créditos del desarrollador -->
       <div class="text-center">
         <p class="text-xs text-pink-500">
           Desarrollado por Jéralyn Acevedo
@@ -66,7 +75,7 @@
 </template>
 
 <script setup>
-// Meta tags para SEO
+// Metadata SEO para la página de bienvenida
 useHead({
   title: 'Seven (707)',
   meta: [

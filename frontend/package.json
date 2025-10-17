@@ -17,8 +17,5 @@
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@headlessui/vue": "^1.7.19",
     "@heroicons/vue": "^2.1.1",
-    "bootstrap": "^5.3.2",
-    "@popperjs/core": "^2.11.8",
-    "bootstrap-icons": "^1.11.3"
   }
 }

@@ -21,7 +21,7 @@
             <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
           <p class="text-sm text-pink-600">Arrastra tu documento PDF aquí o haz clic para seleccionar</p>
-          <p class="text-xs text-pink-400">Solo archivos PDF (hasta 1GB)</p>
+          <p class="text-xs text-pink-400">Solo archivos PDF (hasta 10MB)</p>
         </div>
         
         <div v-else class="space-y-2">
@@ -113,8 +113,8 @@ const validateAndSetFile = (file) => {
     return
   }
   
-  if (file.size > 1024 * 1024 * 1024) { // 1GB
-    error.value = `El archivo no puede ser mayor a 1GB. Tamaño actual: ${(file.size / (1024*1024*1024)).toFixed(2)}GB`
+  if (file.size > 10 * 1024 * 1024) { // 10MB
+    error.value = `El archivo no puede ser mayor a 10MB. Tamaño actual: ${(file.size / (1024*1024)).toFixed(2)}MB`
     return
   }
   
