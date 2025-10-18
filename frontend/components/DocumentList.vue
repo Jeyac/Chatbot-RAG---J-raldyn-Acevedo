@@ -115,8 +115,8 @@
     </div>
     
     <!-- Error Message -->
-    <div v-if="error" class="mt-4 bg-red-50 border border-red-200 rounded-lg p-3">
-      <p class="text-red-600 text-sm">{{ error }}</p>
+    <div v-if="errorMessage" class="mt-4 bg-red-50 border border-red-200 rounded-lg p-3">
+      <p class="text-red-600 text-sm">{{ errorMessage }}</p>
     </div>
   </div>
 </template>
@@ -129,11 +129,11 @@ const { getDocuments, processDocument: processDoc, deleteDocument: deleteDoc } =
 const documents = ref([])
 const loading = ref(false)
 const processing = ref(null)
-const error = ref('')
+const errorMessage = ref('')
 
 const loadDocuments = async () => {
   loading.value = true
-  error.value = ''
+  errorMessage.value = ''
   
   try {
     const response = await getDocuments()
@@ -147,7 +147,7 @@ const loadDocuments = async () => {
       documents.value = []
     }
   } catch (err) {
-    error.value = err.data?.message || 'Error al cargar documentos'
+    errorMessage.value = err.data?.message || 'Error al cargar documentos'
   } finally {
     loading.value = false
   }
@@ -155,13 +155,13 @@ const loadDocuments = async () => {
 
 const processDocument = async (documentId) => {
   processing.value = documentId
-  error.value = ''
+  errorMessage.value = ''
   
   try {
     await processDoc(documentId)
     await loadDocuments() // Reload to get updated status
   } catch (err) {
-    error.value = err.data?.message || 'Error al procesar documento'
+    errorMessage.value = err.data?.message || 'Error al procesar documento'
   } finally {
     processing.value = null
   }
@@ -172,13 +172,13 @@ const deleteDocument = async (documentId) => {
     return
   }
   
-  error.value = ''
+  errorMessage.value = ''
   
   try {
     await deleteDoc(documentId)
     await loadDocuments() // Reload to remove deleted document
   } catch (err) {
-    error.value = err.data?.message || err.message || 'Error al eliminar documento'
+    errorMessage.value = err.data?.message || err.message || 'Error al eliminar documento'
   }
 }
 

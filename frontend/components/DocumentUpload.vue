@@ -57,15 +57,15 @@
       </button>
       
       <!-- Error Message -->
-      <div v-if="error" class="alert alert-danger d-flex align-items-center" role="alert">
+      <div v-if="errorMessage" class="alert alert-danger d-flex align-items-center" role="alert">
         <i class="bi bi-exclamation-triangle-fill me-2"></i>
-        <div>{{ error }}</div>
+        <div>{{ errorMessage }}</div>
       </div>
       
       <!-- Success Message -->
-      <div v-if="success" class="alert alert-success d-flex align-items-center" role="alert">
+      <div v-if="successMessage" class="alert alert-success d-flex align-items-center" role="alert">
         <i class="bi bi-check-circle-fill me-2"></i>
-        <div>{{ success }}</div>
+        <div>{{ successMessage }}</div>
       </div>
     </div>
     </div>
@@ -78,8 +78,8 @@ const emit = defineEmits(['document-uploaded'])
 const fileInput = ref(null)
 const selectedFile = ref(null)
 const uploading = ref(false)
-const error = ref('')
-const success = ref('')
+const errorMessage = ref('')
+const successMessage = ref('')
 
 const { uploadDocument } = useApi()
 
@@ -102,19 +102,19 @@ const handleDrop = (event) => {
 }
 
 const validateAndSetFile = (file) => {
-  error.value = ''
-  success.value = ''
+  errorMessage.value = ''
+  successMessage.value = ''
   
   // Validar extensión del archivo (solo PDF)
   const fileName = file.name.toLowerCase()
   
   if (!fileName.endsWith('.pdf')) {
-    error.value = 'Solo se permiten archivos PDF'
+    errorMessage.value = 'Solo se permiten archivos PDF'
     return
   }
   
   if (file.size > 10 * 1024 * 1024) { // 10MB
-    error.value = `El archivo no puede ser mayor a 10MB. Tamaño actual: ${(file.size / (1024*1024)).toFixed(2)}MB`
+    errorMessage.value = `El archivo no puede ser mayor a 10MB. Tamaño actual: ${(file.size / (1024*1024)).toFixed(2)}MB`
     return
   }
   
@@ -133,12 +133,12 @@ const uploadFile = async () => {
   if (!selectedFile.value) return
   
   uploading.value = true
-  error.value = ''
-  success.value = ''
+  errorMessage.value = ''
+  successMessage.value = ''
   
   try {
     const response = await uploadDocument(selectedFile.value)
-    success.value = 'Documento subido exitosamente'
+    successMessage.value = 'Documento subido exitosamente'
     emit('document-uploaded', response)
     
     // Reset form
@@ -147,7 +147,7 @@ const uploadFile = async () => {
       fileInput.value.value = ''
     }
   } catch (err) {
-    error.value = err.data?.message || 'Error al subir el documento'
+    errorMessage.value = err.data?.message || 'Error al subir el documento'
   } finally {
     uploading.value = false
   }

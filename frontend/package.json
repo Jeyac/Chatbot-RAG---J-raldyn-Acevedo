@@ -14,8 +14,6 @@
     "vue": "^3.5.22",
     "vue-router": "^4.5.1",
     "socket.io-client": "^4.7.5",
-    "@nuxtjs/tailwindcss": "^6.12.1",
-    "@headlessui/vue": "^1.7.19",
-    "@heroicons/vue": "^2.1.1",
+    "@nuxtjs/tailwindcss": "^6.12.1"
   }
 }
